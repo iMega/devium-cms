@@ -1,0 +1,30 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Devium.chm
+Contents file=html\Table of Contents.hhc
+Display compile progress=No
+Index file=html\Index.hhk
+Language=0x419 Русский
+
+
+[FILES]
+html\index.html
+html\images\bg_header.jpg
+html\images\devium_splash.gif
+html\images\guest_book.gif
+html\images\html_toolbar.gif
+html\images\logo.gif
+html\images\news_edit.gif
+html\images\news_main.gif
+html\images\plugin_manager.gif
+html\images\site_manager1.gif
+html\images\site_manager_elemets.gif
+html\images\site_manager_folder_prop.gif
+html\images\site_manager_settings.gif
+html\images\site_manager_toolbar.gif
+html\images\sitelist_edit.gif
+html\images\statistica.gif
+html\style.css
+
+[INFOTYPES]
+
