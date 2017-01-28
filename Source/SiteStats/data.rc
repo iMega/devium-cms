@@ -1,0 +1,5 @@
+PLUGIN_ICON     BITMAP  "..\..\Images\deiv_statistica.bmp"
+SUMMARY_TEE     RT_RCDATA  "summary.tee"
+VISITS_TEE      RT_RCDATA  "visits.tee"
+VISITS2_TEE     RT_RCDATA  "visits2.tee"
+

@@ -1,0 +1,45 @@
+package PageManger;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Плагин для управления страницами сайта'}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Common,
+  tb2k_d7;
+
+{%RC 'data.rc'}
+
+contains
+  PageMangerPlugin in 'PageMangerPlugin.pas',
+  PageMangerDM in 'PageMangerDM.pas' {DM: TDataModule},
+  PageMangerMainForm in 'PageMangerMainForm.pas' {MainForm},
+  PageMangerFolderForm in 'PageMangerFolderForm.pas' {FolderForm},
+  PageMangerLib in 'PageMangerLib.pas',
+  PageTreeForm in 'PageTreeForm.pas' {TreeForm};
+
+end.

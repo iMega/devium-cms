@@ -64,8 +64,8 @@ begin
   inherited;
   FBitmap := Graphics.TBitmap.Create;
   FBitmap.Handle := LoadBitmap(Module, 'PLUGIN_ICON');
-  FDisplayName := 'Отели';
-  FDescription := 'Управление отелями';
+  FDisplayName := 'РћС‚РµР»Рё';
+  FDescription := 'РЈРїСЂР°РІР»РµРЅРёРµ РѕС‚РµР»СЏРјРё';
 end;
 
 destructor THotelsPlugin.Destroy;

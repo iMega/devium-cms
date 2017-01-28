@@ -116,7 +116,7 @@ begin
   begin
     Sort := DM.GetNextSortOrder(DM.Pages, 'sort_order');
     Append;
-    FieldValues['title'] := 'Новая страница';
+    FieldValues['title'] := 'РќРѕРІР°СЏ СЃС‚СЂР°РЅРёС†Р°';
     FieldValues['name'] := TransLiterStr(FieldValues['title']);
     FieldValues['is_visible'] := 1;
     FieldValues['sort_order'] := Sort;
@@ -150,7 +150,7 @@ begin
     Title := FieldValues['title'];
     Text := FieldValues['text'];
     Append;
-    FieldValues['title'] := Title + ' (Копия)';
+    FieldValues['title'] := Title + ' (РљРѕРїРёСЏ)';
     FieldValues['name'] := TransLiterStr(FieldValues['title']);
     FieldValues['sort_order'] := Sort;
     FieldValues['text'] := text;

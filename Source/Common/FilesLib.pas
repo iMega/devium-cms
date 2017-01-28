@@ -38,7 +38,7 @@ type
   end;
 
 const
-  // магические номера
+  // РјР°РіРёС‡РµСЃРєРёРµ РЅРѕРјРµСЂР°
   POST_FILE     = 1;
   GET_FILE      = 2;
   DELETE_DIR    = 3;

@@ -124,10 +124,10 @@ var
   s: String;
   d: TDateTime;
 begin
-  /// закачка
+  /// Р·Р°РєР°С‡РєР°
   if not FileExists(LocalPath) then Exit;
 
-  // Запрос на сравнение длины и времени
+  // Р—Р°РїСЂРѕСЃ РЅР° СЃСЂР°РІРЅРµРЅРёРµ РґР»РёРЅС‹ Рё РІСЂРµРјРµРЅРё
   FormData2 := TIdMultiPartFormDataStream.Create;
   try
     FormData2.AddFormField('action', IntToStr(GET_FILE_INFO));
@@ -135,13 +135,13 @@ begin
     d := GetFileCreationTime(LocalPath);
     FormData2.AddFormField('file_datetime', IntToStr(DateTimeToUnixPHP(d)));
     FormData2.AddFormField('file_size', IntToStr(FileSizeByName(LocalPath)));
-    lbAction.Caption := Format('Действие: проверка, Файл: %s',
+    lbAction.Caption := Format('Р”РµР№СЃС‚РІРёРµ: РїСЂРѕРІРµСЂРєР°, Р¤Р°Р№Р»: %s',
       [ExtractFileName(LocalPath)]);
     s := HTTP.Post(FFilses.URL, FormData2);
     if AnsiCompareText(s, 'ok') <> 0 then
     begin
 
-      /// закачка
+      /// Р·Р°РєР°С‡РєР°
       FormData := TIdMultiPartFormDataStream.Create;
       try
         FormData.AddFormField('action', IntToStr(POST_FILE));
@@ -150,7 +150,7 @@ begin
           GetMIMETypeFromFile(LocalPath));
         d := GetFileCreationTime(LocalPath);
         FormData.AddFormField('file_datetime', IntToStr(DateTimeToUnixPHP(d)));
-        lbAction.Caption := Format('Действие: отправка, Файл: %s',
+        lbAction.Caption := Format('Р”РµР№СЃС‚РІРёРµ: РѕС‚РїСЂР°РІРєР°, Р¤Р°Р№Р»: %s',
           [ExtractFileName(LocalPath)]);
         s := HTTP.Post(FFilses.URL, FormData);
       finally

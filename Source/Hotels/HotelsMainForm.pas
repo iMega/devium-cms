@@ -132,7 +132,7 @@ begin
   with Dm.Hotels do
   begin
     Append;
-    FieldValues['name'] := 'Новый отель';
+    FieldValues['name'] := 'РќРѕРІС‹Р№ РѕС‚РµР»СЊ';
     Post;
     Edit;
     if GetHotelsForm() = mrOK then
@@ -208,7 +208,7 @@ end;
 procedure TMainForm.DelExecute(Sender: TObject);
 begin
   if MessageBox(Handle,
-    'Вы уверены что хотите удалить запись ?',
+    'Р’С‹ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ ?',
     PChar(Caption),
     MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2) = IDOK then
   Dm.Hotels.Delete;

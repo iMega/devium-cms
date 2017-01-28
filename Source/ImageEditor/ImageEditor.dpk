@@ -1,0 +1,49 @@
+package ImageEditor;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Image Editor Plugin'}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  common,
+  tb2k_d7,
+  Rz30Ctls70;
+
+{%RC 'data.rc'}
+{%ToDo 'ImageEditor.todo'}
+
+contains
+  BalanceColor in 'BalanceColor.pas' {frmBalanceColor},
+  Blur in 'Blur.pas' {frmBlur},
+  frm_ContrastBrightness in 'frm_ContrastBrightness.pas' {frmContrastBrightness},
+  imgImageSelect in 'imgImageSelect.pas',
+  mainFrm in 'mainFrm.pas' {MainForm},
+  Resize in 'Resize.pas' {frmResize},
+  Rotate in 'Rotate.pas' {frmRotate},
+  ImageEditorPlugin in 'ImageEditorPlugin.pas';
+
+end.

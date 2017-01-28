@@ -91,7 +91,7 @@ procedure TMainForm.DeleteExecute(Sender: TObject);
 var
   i: Integer;
 begin
-  i := MessageBox(Handle, 'Вы уверены что хотите удалить ?',
+  i := MessageBox(Handle, 'Р’С‹ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ ?',
     PChar(Caption), MB_ICONQUESTION + MB_OKCANCEL + MB_DEFBUTTON2);
   if i = IDCANCEL then Exit;
   with DM.Guestbook do

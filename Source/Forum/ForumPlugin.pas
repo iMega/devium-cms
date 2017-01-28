@@ -50,7 +50,7 @@ constructor TForumPlugin.Create(Module: HMODULE;
 begin
   inherited;
   FBitmap := Graphics.TBitmap.Create;
-  FDisplayName := 'Мега форум';
+  FDisplayName := 'РњРµРіР° С„РѕСЂСѓРј';
   FBitmap.Handle := LoadBitmap(Module, 'PLUGIN_ICON');
 end;
 

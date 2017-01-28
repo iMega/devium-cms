@@ -1,0 +1,51 @@
+package PhotoGallery;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  common,
+  cxGridVCLD7,
+  tb2k_d7;
+
+{%RC 'data.rc'}
+
+contains
+  pgDataModule in 'pgDataModule.pas' {DM: TDataModule},
+  pgMainForm in 'pgMainForm.pas' {MainForm},
+  PhotoGalleryPlugin in 'PhotoGalleryPlugin.pas',
+  pgViewPictureFrom in 'pgViewPictureFrom.pas' {ViewPictureFrom},
+  pgAlbumForm in 'pgAlbumForm.pas' {AlbumForm},
+  pgAddParamsForm in '..\ControlPanel\pgAddParamsForm.pas' {AddParamsForm},
+  pgGalleryForm in 'pgGalleryForm.pas' {GalleryForm},
+  pgGalleryListForm in 'pgGalleryListForm.pas' {GalleryListForm},
+  pgAlbumListForm in 'pgAlbumListForm.pas' {AlbumListForm},
+  pgImageForm in 'pgImageForm.pas' {ImageForm};
+
+end.
+
+

@@ -74,7 +74,7 @@ by TRegExpr's users (see Gratitude below).
     Implemented UniCode support, found and fixed some bugs
   Ralf Junker
     Implemented some features, many optimization suggestions
-  Filip Jirsák and Matthew Winter (wintermi@yahoo.com)
+  Filip JirsĞ±k and Matthew Winter (wintermi@yahoo.com)
     Help in Implementation non-greedy mode
   Kit Eason
     many examples for introduction help section
@@ -186,7 +186,7 @@ Legend:
   get exception while calling Exec[Next], Substitute, Dump, etc if there
   are errors in Expression or other properties.
  -=- (+) Non-greedy style iterators (like '*?'), modifier /g.
-  Implemented with help from Matthew Winter and Filip Jirsák
+  Implemented with help from Matthew Winter and Filip JirsĞ±k
  -=- (+) /x modifier (eXtended syntax - allow formating r.e., see description
   in the help)
  -=- (+) Procedure Compile to [re]compile r.e. Usefull for GUI r.e. editors
@@ -377,7 +377,7 @@ Legend:
  -=- added \s (AnySpace) and \S (NotSpace) meta-symbols
      - implemented by Stephan Klimek with minor fixes by AVS
  -=- added \f, \a and \b chars (translates into FF, BEL, BS)
- -=- removed meta-symbols 'ö' & 'Ö' - sorry for any inconvenients
+ -=- removed meta-symbols 'Ñ†' & 'Ğ¦' - sorry for any inconvenients
  -=- added Match property (== copy (InputStr, MatchPos [Idx], MatchLen [Idx]))
  -=- added extra parameter Offset to Exec method
      (thanks to Steve Mudford)
@@ -413,9 +413,9 @@ Legend:
  -=- code slightly rewriten for pascal
  -=- now macro correct proceeded in ranges
  -=- r.e.ranges syntax extended for russian letters ranges:
-     à-ÿ - replaced with all small russian letters (Win1251)
-     À-ß - replaced with all capital russian letters (Win1251)
-     à-ß - replaced with all russian letters (Win1251)
+     Ğ°-Ñ - replaced with all small russian letters (Win1251)
+     Ğ-Ğ¯ - replaced with all capital russian letters (Win1251)
+     Ğ°-Ğ¯ - replaced with all russian letters (Win1251)
  -=- added macro '\d' (opcode ANYDIGIT) - match any digit
  -=- added macro '\D' (opcode NOTDIGIT) - match not digit
  -=- added macro '\w' (opcode ANYLETTER) - match any english letter or '_'
@@ -755,8 +755,8 @@ type
     property ModifierR : boolean index 2 read GetModifier write SetModifier;
     // Modifier /r - use r.e.syntax extended for russian, 
     // (was property ExtSyntaxEnabled in previous versions)
-    // If true, then à-ÿ  additional include russian letter '¸',
-    // À-ß  additional include '¨', and à-ß include all russian symbols.
+    // If true, then Ğ°-Ñ  additional include russian letter 'Ñ‘',
+    // Ğ-Ğ¯  additional include 'Ğ', and Ğ°-Ğ¯ include all russian symbols.
     // You have to turn it off if it may interfere with you national alphabet.
     // , initialized from RegExprModifierR
 
@@ -1884,17 +1884,17 @@ const
    #$418,#$419,#$41A,#$41B,#$41C,#$41D,#$41E,#$41F,
    #$420,#$421,#$422,#$423,#$424,#$425,#$426,#$427,
    #$428,#$429,#$42A,#$42B,#$42C,#$42D,#$42E,#$42F,#0);
- RusRangeLoLow = #$430{'à'};
- RusRangeLoHigh = #$44F{'ÿ'};
- RusRangeHiLow = #$410{'À'};
- RusRangeHiHigh = #$42F{'ß'};
+ RusRangeLoLow = #$430{'Ğ°'};
+ RusRangeLoHigh = #$44F{'Ñ'};
+ RusRangeHiLow = #$410{'Ğ'};
+ RusRangeHiHigh = #$42F{'Ğ¯'};
 {$ELSE}
- RusRangeLo = 'àáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ';
- RusRangeHi = 'ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß';
- RusRangeLoLow = 'à';
- RusRangeLoHigh = 'ÿ';
- RusRangeHiLow = 'À';
- RusRangeHiHigh = 'ß';
+ RusRangeLo = 'Ğ°Ğ±Ğ²Ğ³Ğ´ĞµÑ‘Ğ¶Ğ·Ğ¸Ğ¹ĞºĞ»Ğ¼Ğ½Ğ¾Ğ¿Ñ€ÑÑ‚ÑƒÑ„Ñ…Ñ†Ñ‡ÑˆÑ‰ÑŠÑ‹ÑŒÑÑÑ';
+ RusRangeHi = 'ĞĞ‘Ğ’Ğ“Ğ”Ğ•ĞĞ–Ğ—Ğ˜Ğ™ĞšĞ›ĞœĞĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©ĞªĞ«Ğ¬Ğ­Ğ®Ğ¯';
+ RusRangeLoLow = 'Ğ°';
+ RusRangeLoHigh = 'Ñ';
+ RusRangeHiLow = 'Ğ';
+ RusRangeHiHigh = 'Ğ¯';
 {$ENDIF}
 
 function TRegExpr.CompileRegExpr (exp : PRegExprChar) : boolean;
@@ -3859,7 +3859,7 @@ procedure TRegExpr.SetInputString (const AInputString : RegExprString);
   fInputStart := PChar (fInputString);
   Len := length (fInputString);
   fInputEnd := PRegExprChar (integer (fInputStart) + Len); ??
-  !! startp/endp âñå ğàâíî áóäåò îïàñíî èñïîëüçîâàòü ?
+  !! startp/endp Ğ²ÑĞµ Ñ€Ğ°Ğ²Ğ½Ğ¾ Ğ±ÑƒĞ´ĞµÑ‚ Ğ¾Ğ¿Ğ°ÑĞ½Ğ¾ Ğ¸ÑĞ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ÑŒ ?
   }
  end; { of procedure TRegExpr.SetInputString
 --------------------------------------------------------------}

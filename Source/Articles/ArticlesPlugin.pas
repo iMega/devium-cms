@@ -50,7 +50,7 @@ constructor TArticlesPlugin.Create(Module: HMODULE;
 begin
   inherited;
   FBitmap := Graphics.TBitmap.Create;
-  FDisplayName := 'Статьи';
+  FDisplayName := 'РЎС‚Р°С‚СЊРё';
   FBitmap.Handle := LoadBitmap(Module, 'PLUGIN_ICON');
 end;
 
@@ -77,7 +77,7 @@ end;
 
 function TArticlesPlugin.GetDescription: string;
 begin
-  Result := 'Редактирование статей';
+  Result := 'Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃС‚Р°С‚РµР№';
 end;
 
 function TArticlesPlugin.GetDisplayName: string;

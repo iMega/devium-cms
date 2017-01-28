@@ -172,7 +172,7 @@ var
 begin
   if not Assigned(SitesTree.Selected) then Exit;
 
-  // Расновляем галки
+  // Р Р°СЃРЅРѕРІР»СЏРµРј РіР°Р»РєРё
   Path := TSite(SitesTree.Selected.Data).Path;
   ini := TIniFile.Create(Path + 'settings.ini');
   try

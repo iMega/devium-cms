@@ -59,8 +59,8 @@ end;
 procedure TForumForm.aRefreshExecute(Sender: TObject);
 begin
   if MessageBox(Handle,
-    'При этой операции все изменения, которые быле произведены, будут утеряны.' + #13#10+
-    'Вы точно уверены что хотите это делать ?', PChar(Caption),
+    'РџСЂРё СЌС‚РѕР№ РѕРїРµСЂР°С†РёРё РІСЃРµ РёР·РјРµРЅРµРЅРёСЏ, РєРѕС‚РѕСЂС‹Рµ Р±С‹Р»Рµ РїСЂРѕРёР·РІРµРґРµРЅС‹, Р±СѓРґСѓС‚ СѓС‚РµСЂСЏРЅС‹.' + #13#10+
+    'Р’С‹ С‚РѕС‡РЅРѕ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ СЌС‚Рѕ РґРµР»Р°С‚СЊ ?', PChar(Caption),
     MB_ICONQUESTION + MB_YESNO) = IDNO then Exit;
 
   Screen.Cursor := crHourGlass;

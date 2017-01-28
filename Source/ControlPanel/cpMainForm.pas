@@ -123,7 +123,7 @@ begin
   FIniFile.Free;
 end;
 
-// Загружаем список проектов
+// Р—Р°РіСЂСѓР¶Р°РµРј СЃРїРёСЃРѕРє РїСЂРѕРµРєС‚РѕРІ
 procedure TMainForm.LoadProjectList;
 var
   i: Integer;
@@ -156,7 +156,7 @@ begin
   LPath := TSite(SitesList.Properties.Items.Objects[SitesList.ItemIndex]).Path;
   FSetings.Load(LPath);
   FillProjectList;
-  // сохранение последнего сайта
+  // СЃРѕС…СЂР°РЅРµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЃР°Р№С‚Р°
   FIniFile.WriteInteger(INI_MAIN, INI_CURRENT, SitesList.ItemIndex);
 end;
 

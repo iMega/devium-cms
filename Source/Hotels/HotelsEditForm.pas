@@ -169,7 +169,7 @@ begin
     ServicesList.Items.EndUpdate;
     EnableControls;
   end;
-  // расновление галочек
+  // СЂР°СЃРЅРѕРІР»РµРЅРёРµ РіР°Р»РѕС‡РµРє
 end;
 
 procedure THotelsForm.FormCreate(Sender: TObject);
@@ -177,13 +177,13 @@ var
   GroupID: Integer;
 begin
   FServices := TServices.Create;
-  FillServicesCollection; // заполнение коллекции данными
-  FillServicesList;       // заполнение списка сервисов
-  FillGroups;             // -//- для групп
-  FillTypes;              // -//- для типов
+  FillServicesCollection; // Р·Р°РїРѕР»РЅРµРЅРёРµ РєРѕР»Р»РµРєС†РёРё РґР°РЅРЅС‹РјРё
+  FillServicesList;       // Р·Р°РїРѕР»РЅРµРЅРёРµ СЃРїРёСЃРєР° СЃРµСЂРІРёСЃРѕРІ
+  FillGroups;             // -//- РґР»СЏ РіСЂСѓРїРї
+  FillTypes;              // -//- РґР»СЏ С‚РёРїРѕРІ
   ///
   GroupID := Integer(Groups.Properties.Items.Objects[Groups.ItemIndex]);
-  SetCheckedServices(GroupID); // растановка галок
+  SetCheckedServices(GroupID); // СЂР°СЃС‚Р°РЅРѕРІРєР° РіР°Р»РѕРє
 end;
 
 procedure THotelsForm.FillGroups;
@@ -211,7 +211,7 @@ begin
     DisableControls;
     Items.Clear;
     BeginUpdate;
-    Items.Add('< Все типы >');
+    Items.Add('< Р’СЃРµ С‚РёРїС‹ >');
     First;
     while not EOF do
     begin
@@ -234,7 +234,7 @@ begin
   id := Integer(Groups.Properties.Items.Objects[Groups.ItemIndex]);
   if FGroupID > 0 then
   begin
-    // чистим данные
+    // С‡РёСЃС‚РёРј РґР°РЅРЅС‹Рµ
     i := 0;
     while FServices.Count > i do
     begin
@@ -243,7 +243,7 @@ begin
       else
         Inc(i);
     end;
-    // добаялем
+    // РґРѕР±Р°СЏР»РµРј
     for i := 0 to ServicesList.Count - 1 do
     begin
       if ServicesList.Checked[i] then
@@ -301,7 +301,7 @@ begin
   begin
     DisableControls;
     HotelID := DM.Hotels['id'];
-    // удаление удаленных записей
+    // СѓРґР°Р»РµРЅРёРµ СѓРґР°Р»РµРЅРЅС‹С… Р·Р°РїРёСЃРµР№
     First;
     while not EOF do
     begin
@@ -310,7 +310,7 @@ begin
       else
         Next;
     end;
-    // добавление записей
+    // РґРѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРµР№
     for i := 0 to FServices.Count - 1 do
     begin
       if not Locate('hotel_id;service_id;group_id',
@@ -380,7 +380,7 @@ var
 begin
   TypeID := Integer(Types.Properties.Items.Objects[Types.ItemIndex]);
   FillServicesList(TypeID);
-  SetCheckedServices(FGroupID); // растановка галок
+  SetCheckedServices(FGroupID); // СЂР°СЃС‚Р°РЅРѕРІРєР° РіР°Р»РѕРє
 end;
 
 procedure THotelsForm.TypeEditExecute(Sender: TObject);
@@ -399,7 +399,7 @@ begin
     SortOrder := DM.GetNextHotelsImagesSort;
     Append;
     FieldValues['sort_order'] := SortOrder;
-    FieldValues['name'] := Format('Фото № %d', [(SortOrder div 10)]);
+    FieldValues['name'] := Format('Р¤РѕС‚Рѕ в„– %d', [(SortOrder div 10)]);
     if GetImageForm(ImageName) = mrOK then
     begin
       if Length(ImageName) > 0 then
@@ -440,7 +440,7 @@ end;
 procedure THotelsForm.DelExecute(Sender: TObject);
 begin
   if MessageBox(Handle,
-    'Вы тоействительно хотите удалить картинку ?',
+    'Р’С‹ С‚РѕРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ РєР°СЂС‚РёРЅРєСѓ ?',
     PChar(Caption),
     MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2) = IDOK
   then

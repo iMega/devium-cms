@@ -87,17 +87,17 @@ begin
   begin
     repeat
       Module := LoadPackage(Path + sr.Name);
-      if Module <> 0 then // загрузился
+      if Module <> 0 then // Р·Р°РіСЂСѓР·РёР»СЃСЏ
       begin
         RegisterPlugin := GetProcAddress(Module, RegisterPluginName);
-        // поиск процедуры регистрации
+        // РїРѕРёСЃРє РїСЂРѕС†РµРґСѓСЂС‹ СЂРµРіРёСЃС‚СЂР°С†РёРё
         if not (Assigned(RegisterPlugin) and RegisterPlugin(Module, Self)) then
           UnloadPackage(Module);
       end;
     until FindNext(sr) <> 0;
     SysUtils.FindClose(sr);
   end;
-  // после того как все плагины загружены, вызываем "рагрузка"
+  // РїРѕСЃР»Рµ С‚РѕРіРѕ РєР°Рє РІСЃРµ РїР»Р°РіРёРЅС‹ Р·Р°РіСЂСѓР¶РµРЅС‹, РІС‹Р·С‹РІР°РµРј "СЂР°РіСЂСѓР·РєР°"
   for i := 0 to FPlugins.Count - 1 do
   begin
     if Supports(FPlugins[i], IPlugin, Plugin) then

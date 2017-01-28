@@ -89,13 +89,13 @@ type
     procedure SetPluginManager(const Value: IPluginManager);
     procedure OpenImageTable;
   public
-    // начало работа с картинками
+    // РЅР°С‡Р°Р»Рѕ СЂР°Р±РѕС‚Р° СЃ РєР°СЂС‚РёРЅРєР°РјРё
     procedure AddImage(const AImageName, ATable, AKeyName: String;
       AKey: Integer; ADelete: Boolean = False);
     procedure AddImage2(const ASourceImageName, ATable, AKeyName: String;
       AKey: Integer; ADelete: Boolean = False);
     procedure RemoveImage(const AImageName, ATable, AKeyName: String; AKey: Integer);
-    // конец работа с картинками
+    // РєРѕРЅРµС† СЂР°Р±РѕС‚Р° СЃ РєР°СЂС‚РёРЅРєР°РјРё
     function GetDataBasePath: String;
     procedure SetDataBasePath(const Value: String);
     procedure Open;
@@ -201,7 +201,7 @@ end;
 
 procedure TDM.HotelsBeforeDelete(DataSet: TDataSet);
 begin
-  // удаление списка фото
+  // СѓРґР°Р»РµРЅРёРµ СЃРїРёСЃРєР° С„РѕС‚Рѕ
   with HotelsImages do
   begin
     DisableControls;
@@ -210,7 +210,7 @@ begin
       Delete;
     EnableControls;
   end;
-  // удаление из отношения сервес-отель
+  // СѓРґР°Р»РµРЅРёРµ РёР· РѕС‚РЅРѕС€РµРЅРёСЏ СЃРµСЂРІРµСЃ-РѕС‚РµР»СЊ
   with HotelsServices do
   begin
     DisableControls;
@@ -229,7 +229,7 @@ end;
 
 procedure TDM.ServicesBeforeDelete(DataSet: TDataSet);
 begin
-  // удаление из отношения сервес-отель
+  // СѓРґР°Р»РµРЅРёРµ РёР· РѕС‚РЅРѕС€РµРЅРёСЏ СЃРµСЂРІРµСЃ-РѕС‚РµР»СЊ
   with HotelsServices do
   begin
     DisableControls;
@@ -247,7 +247,7 @@ end;
 
 procedure TDM.ServicesGroupsBeforeDelete(DataSet: TDataSet);
 begin
-  // удаление из отношения сервес-отель
+  // СѓРґР°Р»РµРЅРёРµ РёР· РѕС‚РЅРѕС€РµРЅРёСЏ СЃРµСЂРІРµСЃ-РѕС‚РµР»СЊ
   with HotelsServices do
   begin
     DisableControls;

@@ -1,0 +1,56 @@
+package Product;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Products Plugin'}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  common,
+  dxInsD7,
+  tb2k_d7,
+  cxGridVCLD7,
+  QExport3RT_D7,
+  dxmdsD7,
+  dxtrmdD7;
+
+{%RC 'data.rc'}
+
+contains
+  ProductsPlugin in 'ProductsPlugin.pas',
+  prodMainForm in 'prodMainForm.pas' {MainForm},
+  progDataModule in 'progDataModule.pas' {DM: TDataModule},
+  prodProductForm in 'prodProductForm.pas' {ProductForm},
+  prodUnitnamesForm in 'prodUnitnamesForm.pas' {UnitnamesForm},
+  prodUnitsListForm in 'prodUnitsListForm.pas' {UnitsListForm},
+  prodSatelliteListForm in 'prodSatelliteListForm.pas' {SatelliteListForm},
+  prodTypesForm in 'prodTypesForm.pas' {TypesForm},
+  prodTypes in 'prodTypes.pas',
+  prodPriceForm in 'prodPriceForm.pas' {PriceForm},
+  prodPriceDataSource in 'prodPriceDataSource.pas',
+  prodShowImage in 'prodShowImage.pas' {ShowImageForm};
+
+end.

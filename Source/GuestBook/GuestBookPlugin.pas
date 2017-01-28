@@ -50,7 +50,7 @@ constructor TGuestBookPlugin.Create(Module: HMODULE;
 begin
   inherited;
   FBitmap := Graphics.TBitmap.Create;
-  FDisplayName := 'Гостевая книга';
+  FDisplayName := 'Р“РѕСЃС‚РµРІР°СЏ РєРЅРёРіР°';
   FBitmap.Handle := LoadBitmap(Module, 'PLUGIN_ICON');
 end;
 
@@ -77,7 +77,7 @@ end;
 
 function TGuestBookPlugin.GetDescription: string;
 begin
-  Result := 'Гостевая книга';
+  Result := 'Р“РѕСЃС‚РµРІР°СЏ РєРЅРёРіР°';
 end;
 
 function TGuestBookPlugin.GetDisplayName: string;

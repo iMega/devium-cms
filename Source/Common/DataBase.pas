@@ -43,19 +43,19 @@ type
     procedure DataSetBeforeDelete(DataSet: TDataSet); virtual;
     procedure DataSetAfterPost(DataSet: TDataSet); virtual;
   public
-    { работа с путем для файлов }
+    { СЂР°Р±РѕС‚Р° СЃ РїСѓС‚РµРј РґР»СЏ С„Р°Р№Р»РѕРІ }
     function GetFilesPath(DataSet: TDataSet): String; virtual;
     function GetRemotePath(const LocalPath: String): String; overload; virtual;
     function GetRemotePath(DataSet: TDataSet): String; overload; virtual;
     function GetLocalPath(DataSet: TDataSet): String; virtual;
-    { методы для данных}
+    { РјРµС‚РѕРґС‹ РґР»СЏ РґР°РЅРЅС‹С…}
     procedure Open; virtual;
     procedure Close; virtual;
     procedure ApplyUpdates; virtual;
     procedure Refresh; virtual;
     function CanApplyUpdates: Boolean; virtual;
     function GetStatsuBarString: String; virtual;
-    { работа с очередью }
+    { СЂР°Р±РѕС‚Р° СЃ РѕС‡РµСЂРµРґСЊСЋ }
     procedure AddFile(DataSet: TDataSet; const AFileName: String);
     procedure DelFile(const AFileName: String);
     procedure DelDir(ADirName: String);
@@ -63,7 +63,7 @@ type
     procedure RenDir(AOldName, NewName: String);
     procedure GetFile(AFileName: String);
     procedure GetDir(ADirName: String);
-    { прочие методы для данных }
+    { РїСЂРѕС‡РёРµ РјРµС‚РѕРґС‹ РґР»СЏ РґР°РЅРЅС‹С… }
     function GetNextSortOrder(DataSet: TDataSet; const AFieldName: String;
       const AFilter: String = ''): Integer; virtual;
     procedure ReSort(DataSet: TDataSet; const AFieldName: String; ADelta: Integer;
@@ -302,11 +302,11 @@ procedure TDB.AddFile(DataSet: TDataSet; const AFileName: String);
 begin
   with RemoteTasks do
   begin
-    // если файл уже есть с писке ?
+    // РµСЃР»Рё С„Р°Р№Р» СѓР¶Рµ РµСЃС‚СЊ СЃ РїРёСЃРєРµ ?
     if Locate('filename;action', VarArrayOf([AFileName, POST_FILE]),
       [loPartialKey]) then Exit;
 
-    // если с писке на удаление
+    // РµСЃР»Рё СЃ РїРёСЃРєРµ РЅР° СѓРґР°Р»РµРЅРёРµ
     if Locate('filename;action', VarArrayOf([AFileName, DELETE_FILE]),
       [loPartialKey]) then  Delete;
 
@@ -323,7 +323,7 @@ procedure TDB.DelDir(ADirName: String);
 begin
   with RemoteTasks do
   begin
-    // если файл уже есть с писке ?
+    // РµСЃР»Рё С„Р°Р№Р» СѓР¶Рµ РµСЃС‚СЊ СЃ РїРёСЃРєРµ ?
     while  Locate('filename', ADirName, [loPartialKey]) do
       Delete;
 
@@ -338,11 +338,11 @@ procedure TDB.DelFile(const AFileName: String);
 begin
   with RemoteTasks do
   begin
-    // если файл уже есть с писке ?
+    // РµСЃР»Рё С„Р°Р№Р» СѓР¶Рµ РµСЃС‚СЊ СЃ РїРёСЃРєРµ ?
     if Locate('filename;action', VarArrayOf([AFileName, DELETE_FILE]),
       [loPartialKey]) then Exit;
 
-    // если с писке на удаление
+    // РµСЃР»Рё СЃ РїРёСЃРєРµ РЅР° СѓРґР°Р»РµРЅРёРµ
     if Locate('filename;action', VarArrayOf([AFileName, POST_FILE]),
       [loPartialKey]) then
      begin
@@ -400,7 +400,7 @@ begin
   RemotePath := DosPathToUnixPath(RemotePath);
 end;
 
-// больба с блобавми, нулевае блобы
+// Р±РѕР»СЊР±Р° СЃ Р±Р»РѕР±Р°РІРјРё, РЅСѓР»РµРІР°Рµ Р±Р»РѕР±С‹
 procedure TDB.DataSetBeforePost(DataSet: TDataSet);
 var
   I: Integer;
@@ -420,7 +420,7 @@ begin
   Result := '';
 end;
 
-// попвтка удалить все файла которые пренадлежат данной записи
+// РїРѕРїРІС‚РєР° СѓРґР°Р»РёС‚СЊ РІСЃРµ С„Р°Р№Р»Р° РєРѕС‚РѕСЂС‹Рµ РїСЂРµРЅР°РґР»РµР¶Р°С‚ РґР°РЅРЅРѕР№ Р·Р°РїРёСЃРё
 procedure TDB.DataSetBeforeDelete(DataSet: TDataSet);
 var
   sl: TStringList;
@@ -447,7 +447,7 @@ begin
   end;
 end;
 
-// получение статцсной информации
+// РїРѕР»СѓС‡РµРЅРёРµ СЃС‚Р°С‚С†СЃРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё
 function TDB.GetStatsuBarString: String;
 var
   DataSet: TClientDataSet;
@@ -491,7 +491,7 @@ begin
     try
       sl.Text := FileList;
       for i := 0 to sl.Count - 1 do
-        if ExtractFileName(sl[i]) <> '' then // не папка
+        if ExtractFileName(sl[i]) <> '' then // РЅРµ РїР°РїРєР°
           AddFile(DataSet, sl[i]);
     finally
       sl.Free;

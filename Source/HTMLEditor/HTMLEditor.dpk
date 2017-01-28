@@ -1,0 +1,47 @@
+package HTMLEditor;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Common,
+  dcctd7rt,
+  vclie,
+  dclDHTML_editr,
+  tb2k_d7;
+
+contains
+  DHTMLFrm in 'DHTMLFrm.pas' {DHTMLForm},
+  InsertTableFrm in 'InsertTableFrm.pas' {InsertTableForm},
+  CellPropertyFrm in 'CellPropertyFrm.pas' {CellPropertyForm},
+  UListPropertyFrm in 'UListPropertyFrm.pas' {UListPropertyForm},
+  OListPropertyFrm in 'OListPropertyFrm.pas' {OListPropertyForm},
+  TablePropertyFrm in 'TablePropertyFrm.pas' {TablePropertyForm},
+  ImagePropertyFrm in 'ImagePropertyFrm.pas' {ImagePropertyForm},
+  AlignUtils in 'AlignUtils.pas',
+  HTMLEditorPlugin in 'HTMLEditorPlugin.pas';
+
+end.

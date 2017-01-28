@@ -175,7 +175,7 @@ end;
 procedure TSettingsPlugin.SetupSoapConnection(SoapConnection: TSoapConnection);
 begin
   SoapConnection.URL := GetHttpRoot + soap_server;
-  { TODO 5 -opalaidn : Доделать работу с прокси }
+  { TODO 5 -opalaidn : Р”РѕРґРµР»Р°С‚СЊ СЂР°Р±РѕС‚Сѓ СЃ РїСЂРѕРєСЃРё }
 end;
 
 procedure TSettingsPlugin.SetUseHttpProxy(Value: Boolean);

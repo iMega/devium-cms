@@ -34,7 +34,7 @@ function ForceDeleteDir(const AName: String): Boolean;
 function ForceDeleteDirOrFile(const AName: String): Boolean;
 
 // Unix timestamp
-// введена из-за проблем с часовыми поясами
+// РІРІРµРґРµРЅР° РёР·-Р·Р° РїСЂРѕР±Р»РµРј СЃ С‡Р°СЃРѕРІС‹РјРё РїРѕСЏСЃР°РјРё
 function DateTimeToUnixPHP(const AValue: TDateTime): Int64;
 function UnixToDateTimePHP(const AValue: Int64): TDateTime;
   
@@ -240,7 +240,7 @@ begin
   while L <> 0 do
   begin
     Ch := Source^;
-    if (Ch >= 'А') and (Ch <= 'Я') then Inc(Ch, 32);
+    if (Ch >= 'Рђ') and (Ch <= 'РЇ') then Inc(Ch, 32);
     Dest^ := Ch;
     Inc(Source);
     Inc(Dest);
@@ -258,37 +258,37 @@ begin
   S := LowerCaseRus(AnsiReplaceText(Value, ' ', '_'));
   for i:=1 to Length(S) do
   case S[i] Of
-    'а':Result  :=  Result  +'a';
-    'б':Result  :=  Result  +'b';
-    'в':Result  :=  Result  +'v';
-    'г':Result  :=  Result  +'g';
-    'д':Result  :=  Result  +'d';
-    'е':Result  :=  Result  +'e';
-    'ё':Result  :=  Result  +'yo';
-    'ж':Result  :=  Result  +'zh';
-    'з':Result  :=  Result  +'z';
-    'и':Result  :=  Result  +'i';
-    'й':Result  :=  Result  +'y';
-    'к':Result  :=  Result  +'k';
-    'л':Result  :=  Result  +'l';
-    'м':Result  :=  Result  +'m';
-    'н':Result  :=  Result  +'n';
-    'о':Result  :=  Result  +'o';
-    'п':Result  :=  Result  +'p';
-    'р':Result  :=  Result  +'r';
-    'с':Result  :=  Result  +'s';
-    'т':Result  :=  Result  +'t';
-    'у':Result  :=  Result  +'u';
-    'ф':Result  :=  Result  +'f';
-    'х':Result  :=  Result  +'h';
-    'ц':Result  :=  Result  +'c';
-    'ч':Result  :=  Result  +'ch';
-    'ш':Result  :=  Result  +'sh';
-    'щ':Result  :=  Result  +'sch';
-    'ы':Result  :=  Result  +'i';
-    'э':Result  :=  Result  +'e';
-    'ю':Result  :=  Result  +'yu';
-    'я':Result  :=  Result  +'ya';
+    'Р°':Result  :=  Result  +'a';
+    'Р±':Result  :=  Result  +'b';
+    'РІ':Result  :=  Result  +'v';
+    'Рі':Result  :=  Result  +'g';
+    'Рґ':Result  :=  Result  +'d';
+    'Рµ':Result  :=  Result  +'e';
+    'С‘':Result  :=  Result  +'yo';
+    'Р¶':Result  :=  Result  +'zh';
+    'Р·':Result  :=  Result  +'z';
+    'Рё':Result  :=  Result  +'i';
+    'Р№':Result  :=  Result  +'y';
+    'Рє':Result  :=  Result  +'k';
+    'Р»':Result  :=  Result  +'l';
+    'Рј':Result  :=  Result  +'m';
+    'РЅ':Result  :=  Result  +'n';
+    'Рѕ':Result  :=  Result  +'o';
+    'Рї':Result  :=  Result  +'p';
+    'СЂ':Result  :=  Result  +'r';
+    'СЃ':Result  :=  Result  +'s';
+    'С‚':Result  :=  Result  +'t';
+    'Сѓ':Result  :=  Result  +'u';
+    'С„':Result  :=  Result  +'f';
+    'С…':Result  :=  Result  +'h';
+    'С†':Result  :=  Result  +'c';
+    'С‡':Result  :=  Result  +'ch';
+    'С€':Result  :=  Result  +'sh';
+    'С‰':Result  :=  Result  +'sch';
+    'С‹':Result  :=  Result  +'i';
+    'СЌ':Result  :=  Result  +'e';
+    'СЋ':Result  :=  Result  +'yu';
+    'СЏ':Result  :=  Result  +'ya';
   else
     Result := Result + S[i];
   end;
