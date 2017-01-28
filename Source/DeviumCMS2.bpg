@@ -1,0 +1,71 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Common.bpl dcrDataBase.bpl devium_PageManger.bpl HTMLEditor.bpl \
+  devium_HTMLEditor2.bpl devium_SiteStats.bpl danko_Travel.bpl danko_Hotels.bpl \
+  devium_News.bpl devium_GuestBook.bpl ImageEditor.bpl deiv_PhotoGallery.bpl \
+  Product.bpl devium_forum.bpl dobden_Articles.bpl devium_Portfolio.bpl Devium.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Devium.exe: ControlPanel\Devium.dpr
+  $(DCC)
+
+Common.bpl: Common\Common.dpk
+  $(DCC)
+
+devium_PageManger.bpl: PageManager\PageManger.dpk
+  $(DCC)
+
+HTMLEditor.bpl: HTMLEditor\HTMLEditor.dpk
+  $(DCC)
+
+danko_Hotels.bpl: Hotels\Hotels.dpk
+  $(DCC)
+
+danko_Travel.bpl: Travel\Travel.dpk
+  $(DCC)
+
+devium_SiteStats.bpl: SiteStats\SiteStats.dpk
+  $(DCC)
+
+devium_News.bpl: News\News.dpk
+  $(DCC)
+
+devium_GuestBook.bpl: GuestBook\GuestBook.dpk
+  $(DCC)
+
+deiv_PhotoGallery.bpl: PhotoGallery\PhotoGallery.dpk
+  $(DCC)
+
+dcrDataBase.bpl: Common\dcrDataBase.dpk
+  $(DCC)
+
+ImageEditor.bpl: ImageEditor\ImageEditor.dpk
+  $(DCC)
+
+Product.bpl: Products\Product.dpk
+  $(DCC)
+
+devium_forum.bpl: Forum\forum.dpk
+  $(DCC)
+
+dobden_Articles.bpl: Articles\Articles.dpk
+  $(DCC)
+
+devium_HTMLEditor2.bpl: HTMLEditor2\HTMLEditor2.dpk
+  $(DCC)
+
+devium_Portfolio.bpl: Portfolio\Portfolio.dpk
+  $(DCC)
+
+
