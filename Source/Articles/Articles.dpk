@@ -1,0 +1,45 @@
+package Articles;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBPREFIX 'devium_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Common,
+  tb2k_d7,
+  cxGridVCLD7;
+
+{%RC 'data.rc'}
+
+contains
+  ArticlesPlugin in 'ArticlesPlugin.pas',
+  artMainFrm in 'artMainFrm.pas' {MainForm},
+  artDataModule in 'artDataModule.pas' {DM: TDataModule},
+  artCategoriesFrm in 'artCategoriesFrm.pas' {CategoriesForm},
+  artArticle in 'artArticle.pas' {ArticleForm},
+  artPageNameEditFrm in 'artPageNameEditFrm.pas' {PageNameEditForm};
+
+end.
