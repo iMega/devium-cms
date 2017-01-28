@@ -1,0 +1,5 @@
+.DS_Store
+CVS
+*.dof
+*.stat
+Thumbs.db

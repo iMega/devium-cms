@@ -1,0 +1,1 @@
+del /S /Q /F *.dcu;*.exe;*.~*;*.bpl;*.dcp;*.ddp
