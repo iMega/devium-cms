@@ -1,0 +1,68 @@
+{----------------------------------------------------------------------
+
+   DEVIUM Content Management System
+   Copyright (C) 2004 by DEIV Development Team.
+   http://www.deiv.com/
+
+   $Header: /devium/Devium\040CMS\0402/Source/Common/Common.dpk,v 1.5 2004/05/06 07:12:22 paladin Exp $
+
+------------------------------------------------------------------------}
+package Common;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  rtl,
+  dbrtl,
+  inet,
+  xmlrtl,
+  dsnap,
+  indy70,
+  cxLibraryVCLD7,
+  dxThemeD7,
+  cxEditorsVCLD7,
+  soaprtl;
+
+contains
+  ControlPanelElementIntf in 'ControlPanelElementIntf.pas',
+  LibGfl in 'LibGfl.pas',
+  PluginIntf in 'PluginIntf.pas',
+  PluginManagerIntf in 'PluginManagerIntf.pas',
+  DataModuleIntf in 'DataModuleIntf.pas',
+  SettingsIntf in 'SettingsIntf.pas',
+  DataBaseIntf in 'DataBaseIntf.pas',
+  DeviumLib in 'DeviumLib.pas',
+  GflImage in 'GflImage.pas',
+  HTMLEditorIntf in 'HTMLEditorIntf.pas',
+  ZLibEx in 'ZLIBEX.PAS',
+  ProgressCopyFrm in 'ProgressCopyFrm.pas' {ProgressCopyForm},
+  FilesLib in 'FilesLib.pas',
+  DataBase in 'DataBase.pas' {DB: TDataModule},
+  RegExpr in 'RegExpr.pas',
+  LinkBrowserIntf in 'LinkBrowserIntf.pas';
+
+end.
