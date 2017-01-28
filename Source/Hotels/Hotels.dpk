@@ -1,0 +1,60 @@
+package Hotels;
+
+{$R *.res}
+{$R 'data.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'База дыннах по отелям'}
+{$LIBPREFIX 'danko_'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Common,
+  tb2k_d7,
+  cxGridVCLD7,
+  vcl,
+  rtl,
+  dbrtl,
+  vclx,
+  cxLibraryVCLD7,
+  dxThemeD7,
+  cxEditorsVCLD7,
+  cxDataD7,
+  vcljpg,
+  vcldb,
+  cxExportVCLD7;
+
+{%RC 'data.rc'}
+
+contains
+  HotelsPlugin in 'HotelsPlugin.pas',
+  HotelsDataModule in 'HotelsDataModule.pas' {DM: TDataModule},
+  HotelsMainForm in 'HotelsMainForm.pas' {MainForm},
+  HotelsEditForm in 'HotelsEditForm.pas' {HotelsForm},
+  HotelsTypesForm in 'HotelsTypesForm.pas' {TypesForm},
+  HotelsPlacesForm in 'HotelsPlacesForm.pas' {PlacesForm},
+  HotelsPlaceEditForm in 'HotelsPlaceEditForm.pas' {PlaceEditForm},
+  HotelsImageForm in 'HotelsImageForm.pas' {ImageForm},
+  HotelsUploadForm in 'HotelsUploadForm.pas' {UploadForm};
+
+end.
